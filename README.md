@@ -1,5 +1,7 @@
 # Social Media Banner Generator
 
+💡Please leave a star ⭐️ if you found this useful💡
+
 ## Description
 
 This is a simple react app which takes in text , background color and text color as input and generates a banner image as per the user's liking.
