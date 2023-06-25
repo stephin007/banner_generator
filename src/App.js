@@ -24,13 +24,13 @@ const BannerGenerator = () => {
       <div className='blog-banner-container'>
         <div className='blog-banner-heading'>
           <p>
-            Social Media Banner <span>Generator</span>{" "}
+            Social Media Banner <span>Generator</span>
           </p>
         </div>
 
         <div className='blog-banner-tools-main'>
           <div className='blog-banner-tools-text'>
-            <label htmlFor='text'>Text:</label>
+            <label htmlFor='text'>Text</label>
             <input
               type='text'
               id='text'
@@ -39,23 +39,23 @@ const BannerGenerator = () => {
             />
           </div>
           <div className='blog-banner-tools-color'>
-            <label htmlFor='color'>Text Color:</label>
+            <label htmlFor='color'>Text Color</label>
             <input
               type='color'
               id='color'
               value={color}
               onChange={handleColorChange}
             />
+          </div>
 
-            <div className='blog-banner-tools-bg-color'>
-              <label htmlFor='backgroundColor'>Background Color:</label>
-              <input
-                type='color'
-                id='backgroundColor'
-                value={backgroundColor}
-                onChange={handleBackgroundColorChange}
-              />
-            </div>
+          <div className='blog-banner-tools-bg-color'>
+            <label htmlFor='backgroundColor'>Background Color</label>
+            <input
+              type='color'
+              id='backgroundColor'
+              value={backgroundColor}
+              onChange={handleBackgroundColorChange}
+            />
           </div>
         </div>
         <div

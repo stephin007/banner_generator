@@ -55,3 +55,42 @@ body {
   font-weight: 900;
   color: #35A420;
 }
+
+.blog-banner-tools-main{
+  display: flex;
+  padding: 10px;
+  height: 30px;
+}
+
+.blog-banner-tools-text, .blog-banner-tools-color, .blog-banner-tools-bg-color{
+  display: flex;
+  align-items: center;
+  width: 250px;
+}
+
+.blog-banner-tools-color, .blog-banner-tools-bg-color{
+  display: flex;
+  align-items: center;
+  width: 350px;
+}
+
+.blog-banner-tools-text input, .blog-banner-tools-color input, .blog-banner-tools-bg-color input{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 15px;
+  font-weight: 900;
+  margin-left: 20px;
+}
+
+.blog-banner-tools-text label{
+  color: black;
+  font-weight: 900;
+}
+
+.blog-banner-tools-color label, .blog-banner-tools-bg-color label{
+  margin-left: 20px;
+  color: black;
+  width: 290px;
+  font-weight: 900;
+}
