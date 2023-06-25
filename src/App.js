@@ -23,7 +23,9 @@ const BannerGenerator = () => {
     <div className='blog-banner-main-container'>
       <div className='blog-banner-container'>
         <div className='blog-banner-heading'>
-          <h1>Social Media Banner Generator</h1>
+          <p>
+            Social Media Banner <span>Generator</span>{" "}
+          </p>
         </div>
 
         <div className='blog-banner-tools-main'>
