@@ -8,7 +8,7 @@ This is a simple react app which takes in text , background color and text color
 
 ## Demo
 
-![Demo]()
+[Demo](https://quickbannr.vercel.app/)
 
 ## Installation
 
