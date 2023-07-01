@@ -24,14 +24,19 @@ const BannerGenerator = () => {
     const banner = bannerRef.current;
     const canvas = document.createElement("canvas");
     const context = canvas.getContext("2d");
-    canvas.width = banner.offsetWidth;
-    canvas.height = banner.offsetHeight;
+    const bannerWidth = banner.offsetWidth;
+    const bannerHeight = banner.offsetHeight;
+
+    canvas.width = bannerWidth;
+    canvas.height = bannerHeight;
 
     context.fillStyle = backgroundColor;
     context.fillRect(0, 0, canvas.width, canvas.height);
-    context.font = "24px bold Monospace";
+    context.font = "24px bold sans-serif";
     context.fillStyle = color;
-    context.fillText(text, 20, 40);
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.fillText(text, bannerWidth / 2, bannerHeight / 2);
 
     const dataURL = canvas.toDataURL("image/png");
     const link = document.createElement("a");
