@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import "./App.css";
 
 const BannerGenerator = () => {
-  const [text, setText] = useState("Social Media Banner");
+  const [text, setText] = useState("");
   const [color, setColor] = useState("#000000");
   const [backgroundColor, setBackgroundColor] = useState("#FDDF63");
   const bannerRef = useRef(null);
@@ -21,28 +21,30 @@ const BannerGenerator = () => {
   };
 
   const handleDownload = () => {
-    const banner = bannerRef.current;
-    const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d");
-    const bannerWidth = banner.offsetWidth;
-    const bannerHeight = banner.offsetHeight;
+    if (text) {
+      const banner = bannerRef.current;
+      const canvas = document.createElement("canvas");
+      const context = canvas.getContext("2d");
+      const bannerWidth = banner.offsetWidth;
+      const bannerHeight = banner.offsetHeight;
 
-    canvas.width = bannerWidth;
-    canvas.height = bannerHeight;
+      canvas.width = bannerWidth;
+      canvas.height = bannerHeight;
 
-    context.fillStyle = backgroundColor;
-    context.fillRect(0, 0, canvas.width, canvas.height);
-    context.font = "24px bold sans-serif";
-    context.fillStyle = color;
-    context.textAlign = "center";
-    context.textBaseline = "middle";
-    context.fillText(text, bannerWidth / 2, bannerHeight / 2);
+      context.fillStyle = backgroundColor;
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      context.font = "24px bold sans-serif";
+      context.fillStyle = color;
+      context.textAlign = "center";
+      context.textBaseline = "middle";
+      context.fillText(text, bannerWidth / 2, bannerHeight / 2);
 
-    const dataURL = canvas.toDataURL("image/png");
-    const link = document.createElement("a");
-    link.href = dataURL;
-    link.download = "blog_banner.png";
-    link.click();
+      const dataURL = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.href = dataURL;
+      link.download = "blog_banner.png";
+      link.click();
+    }
   };
 
   return (
@@ -103,7 +105,11 @@ const BannerGenerator = () => {
           </div>
         </div>
         <div className='blog-banner-download'>
-          <button className='download-button' onClick={handleDownload}>
+          <button
+            className='download-button'
+            onClick={handleDownload}
+            disabled={!text}
+          >
             Download
           </button>
         </div>
