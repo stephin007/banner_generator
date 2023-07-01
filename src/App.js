@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import "./App.css";
 
 const BannerGenerator = () => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState("Hello World 👋");
   const [color, setColor] = useState("#000000");
   const [backgroundColor, setBackgroundColor] = useState("#FDDF63");
   const bannerRef = useRef(null);
