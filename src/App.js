@@ -5,6 +5,7 @@ import "./App.css";
 const BannerGenerator = () => {
   const [text, setText] = useState("Hello World 👋");
   const [color, setColor] = useState("#000000");
+  const [font, setFont] = useState("Arial");
   const [backgroundColor, setBackgroundColor] = useState("#FDDF63");
   const bannerRef = useRef(null);
 
@@ -20,6 +21,10 @@ const BannerGenerator = () => {
     setBackgroundColor(event.target.value);
   };
 
+  const handleFontChange = (event) => {
+    setFont(event.target.value);
+  };
+
   const handleDownload = () => {
     if (text) {
       const banner = bannerRef.current;
@@ -31,6 +36,7 @@ const BannerGenerator = () => {
       canvas.width = bannerWidth;
       canvas.height = bannerHeight;
 
+      context.font = `24px bold ${font}`;
       context.fillStyle = backgroundColor;
       context.fillRect(0, 0, canvas.width, canvas.height);
       context.font = "24px bold sans-serif";
@@ -85,6 +91,17 @@ const BannerGenerator = () => {
               onChange={handleBackgroundColorChange}
             />
           </div>
+          <div className='blog-banner-tools-font'>
+            <label htmlFor='font'>Font</label>
+            <select id='font' value={font} onChange={handleFontChange}>
+              <option value='Arial'>Arial</option>
+              <option value='Helvetica'>Helvetica</option>
+              <option value='Verdana'>Verdana</option>
+              <option value='Times New Roman'>Times New Roman</option>
+              <option value='Courier New'>Courier New</option>
+              {/* Add more font options as needed */}
+            </select>
+          </div>
         </div>
         <div className='blog-banner-preview' ref={bannerRef}>
           <div
@@ -99,6 +116,7 @@ const BannerGenerator = () => {
               fontSize: "24px",
               fontWeight: "bold",
               borderRadius: "5px",
+              fontFamily: font,
             }}
           >
             {text}
